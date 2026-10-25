@@ -13,6 +13,7 @@
 3. 载入这题的表：`.read setup/1757_recyclable-and-low-fat-products.sql`。每个脚本会先 DROP 同名表，可以反复执行。
 4. 自己写查询，对照数据检查结果。
 5. 去 LeetCode 提交（选 MySQL）。不对的话，再看 `solutions_sqlite.sql` 里这题的答案和要点。
+6. 在 [`PROGRESS.md`](PROGRESS.md) 里更新这题的状态，笔记写在 `../notes/<题号>_<slug>.md`。
 
 示例数据是我自己编的小数据，规模和题目示例相近，用来验证思路，最终以 LeetCode 判题为准。题目链接用的是 leetcode.cn，题单入口：[SQL 50（力扣）](https://leetcode.cn/studyplan/sql-free-50/)。
 
