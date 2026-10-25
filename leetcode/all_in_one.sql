@@ -423,11 +423,11 @@ LIMIT 1;
 DROP TABLE IF EXISTS Accounts;
 CREATE TABLE Accounts (account_id INTEGER PRIMARY KEY, income INTEGER);
 INSERT INTO Accounts VALUES (3,108939),(2,12747),(8,87709),(6,91796);
-SELECT 'Low Salary' AS category, SUM(income < 20000) AS accounts_count FROM Accounts
+SELECT 'Low Salary' AS category, IFNULL(SUM(income < 20000), 0) AS accounts_count FROM Accounts
 UNION ALL
-SELECT 'Average Salary', SUM(income BETWEEN 20000 AND 50000) FROM Accounts
+SELECT 'Average Salary', IFNULL(SUM(income BETWEEN 20000 AND 50000), 0) FROM Accounts
 UNION ALL
-SELECT 'High Salary', SUM(income > 50000) FROM Accounts;
+SELECT 'High Salary', IFNULL(SUM(income > 50000), 0) FROM Accounts;
 
 .print '=== 6 子查询 ==='
 .print ''

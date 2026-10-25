@@ -328,12 +328,12 @@ LIMIT 1;
 -- 1907. 按分类统计薪水
 -- https://leetcode.cn/problems/count-salary-categories/
 -- 分组：5 高级查询和连接
--- 要点：要求即使某类为 0 也要输出，所以不能简单 GROUP BY（没有行的组不会出现）。若表为空，SUM 返回 NULL，可再包 IFNULL(...,0)。
-SELECT 'Low Salary' AS category, SUM(income < 20000) AS accounts_count FROM Accounts
+-- 要点：要求即使某类为 0 也要输出，所以不能简单 GROUP BY（没有行的组不会出现）。表为空时 SUM 返回 NULL，所以每个 SUM 都包了 IFNULL(...,0)。
+SELECT 'Low Salary' AS category, IFNULL(SUM(income < 20000), 0) AS accounts_count FROM Accounts
 UNION ALL
-SELECT 'Average Salary', SUM(income BETWEEN 20000 AND 50000) FROM Accounts
+SELECT 'Average Salary', IFNULL(SUM(income BETWEEN 20000 AND 50000), 0) FROM Accounts
 UNION ALL
-SELECT 'High Salary', SUM(income > 50000) FROM Accounts;
+SELECT 'High Salary', IFNULL(SUM(income > 50000), 0) FROM Accounts;
 
 -- ============================================================
 -- 第 6 子查询
