@@ -11,3 +11,9 @@
 - `python-sqlite3.md`：在 Python 里使用 SQLite
 
 LeetCode 题目里的差异速查表见 [`../leetcode/README.md`](../leetcode/README.md) 末尾。
+
+## 每题笔记
+
+刷 SQL 50 时每题一份笔记，文件名和建表脚本一致：`<题号>_<英文 slug>.md`。进度总表见 [`../leetcode/PROGRESS.md`](../leetcode/PROGRESS.md)。
+
+- [1757 可回收且低脂的产品](1757_recyclable-and-low-fat-products.md)：表 / 行 / 列、SELECT、WHERE、AND
